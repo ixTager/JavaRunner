@@ -14,9 +14,9 @@ public class CodeServiceImpl implements CodeService {
     @Override
     public String saveAndRun(String code) {
         try {
-            codeUtil.sendCodeToMainJava(code);
+            codeUtil.compileAndRun(code);
 
-            return codeUtil.runCodeMainJava();
+            return codeUtil.compileAndRun(code);
         }
         catch (IOException | InterruptedException e) {
             e.printStackTrace();

@@ -13,8 +13,12 @@ public class CodeController {
     private final CodeService codeService;
 
     @GetMapping
-    public ResponseEntity<String> getCode() {
-        return ResponseEntity.ok("Hello World");
+    public ResponseEntity<String> getDefaultCode() {
+        return ResponseEntity.ok("class Main {\n" +
+                "    public static void main(String[] args) {\n " +
+                "       System.out.println(\"Hello World!\");\n" +
+                "    }\n" +
+                "}");
     }
 
     @PostMapping
